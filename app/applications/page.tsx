@@ -1,3 +1,5 @@
+import ApplicationCard from "@/components/ApplicationCard";
+
 const applications = [
   {
     id: 1,
@@ -51,38 +53,14 @@ export default function ApplicationsPage() {
 
         <div className="grid gap-4">
           {applications.map((application) => (
-            <article
+            <ApplicationCard
               key={application.id}
-              className="rounded-xl border border-zinc-800 bg-zinc-900 p-5"
-            >
-              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                <div>
-                  <h2 className="text-xl font-semibold text-white">
-                    {application.positionTitle}
-                  </h2>
-
-                  <p className="mt-1 text-slate-300">
-                    {application.companyName}
-                  </p>
-                </div>
-
-                <span className="rounded-full bg-violet-600 px-3 py-1 text-sm font-medium text-white">
-                  {application.status}
-                </span>
-              </div>
-
-              <div className="mt-4 grid gap-2 text-sm text-slate-300 md:grid-cols-2">
-                <p>
-                  <span className="font-medium text-slate-100">Date :</span>{" "}
-                  {application.applicationDate}
-                </p>
-
-                <p>
-                  <span className="font-medium text-slate-100">Note :</span>{" "}
-                  {application.rating}/5
-                </p>
-              </div>
-            </article>
+              companyName={application.companyName}
+              positionTitle={application.positionTitle}
+              applicationDate={application.applicationDate}
+              status={application.status}
+              rating={application.rating}
+            />
           ))}
         </div>
       </section>
