@@ -7,7 +7,6 @@ const applications = [
     positionTitle: "Développeuse mobile junior",
     applicationDate: "2026-07-01",
     status: "Refusé",
-    rating: 3,
   },
   {
     id: 2,
@@ -15,7 +14,6 @@ const applications = [
     positionTitle: "Programmeuse-analyste",
     applicationDate: "2026-07-05",
     status: "En attente",
-    rating: 4,
   },
   {
     id: 3,
@@ -23,7 +21,6 @@ const applications = [
     positionTitle: "Programmeuse Java junior",
     applicationDate: "2026-07-08",
     status: "Postulé",
-    rating: 3,
   },
 ];
 
@@ -46,8 +43,7 @@ export default function ApplicationsPage() {
             <li>leur entreprise;</li>
             <li>leur poste;</li>
             <li>leur date d&apos;application;</li>
-            <li>leur statut;</li>
-            <li>une note d&apos;intérêt.</li>
+            <li>leur statut.</li>
           </ul>
         </div>
 
@@ -59,7 +55,6 @@ export default function ApplicationsPage() {
               positionTitle={application.positionTitle}
               applicationDate={application.applicationDate}
               status={application.status}
-              rating={application.rating}
             />
           ))}
         </div>
