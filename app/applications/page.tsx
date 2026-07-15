@@ -1,6 +1,7 @@
 import ApplicationCard from "@/components/ApplicationCard";
+import type { Application } from "@/types/application";
 
-const applications = [
+const applications: Application[] = [
   {
     id: 1,
     companyName: "Mirego",
