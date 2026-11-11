@@ -1,16 +1,16 @@
 # Job Tracker App
 
-Job Tracker App est un mini-projet web que j’ai commencé dans le but de pratiquer mes compétences en développement avec Next.js, TypeScript et Tailwind CSS.
+Job Tracker App est un mini-projet d'application web que j’ai commencé dans le but de pratiquer mes compétences en développement avec Next.js, TypeScript et Tailwind CSS.
 
-L’objectif du projet est simple : créer une application qui permet de suivre des candidatures d’emploi, avec une structure de code organisée.
+L’objectif du projet est simple : créer une application qui permet de suivre mes candidatures d’emploi.
 
-Ce projet représente un premier pas dans mon portfolio GitHub et en tant que programmeuse-analyste informatique junior.
+Ce projet fait partie de mon portfolio GitHub et me permet de mettre en pratique mes connaissances en tant que programmeuse-analyste informatique junior.
 
 ## Objectif du projet
 
-Le but de cette application est de permettre à un utilisateur de consulter une liste de candidatures et de suivre leur statut.
+Le but de cette application est de me permettre de consulter une liste de candidatures et de suivre leur statut.
 
-Pour l’instant, l’application affiche des données temporaires directement dans le code. La connexion à une base de données sera ajoutée dans les jorus qui suivent.
+Pour l’instant, l’application affiche des données temporaires directement dans le code. La connexion à une base de données sera ajoutée dans une prochaine étape du développement.
 
 ## Fonctionnalités actuelles
 
