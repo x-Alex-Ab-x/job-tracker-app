@@ -14,14 +14,10 @@ export default function ApplicationsPage() {
         </h1>
 
         <div className="mb-10 max-w-2xl space-y-3 text-slate-300">
-          <p>Cette page affiche une première liste de candidatures avec :</p>
-
-          <ul className="list-disc space-y-1 pl-6">
-            <li>leur entreprise;</li>
-            <li>leur poste;</li>
-            <li>leur date d&apos;application;</li>
-            <li>leur statut.</li>
-          </ul>
+          <p className="mb-10 max-w-2xl text-xl text-slate-300">
+            Cette page me permet de consulter mes candidatures et de suivre leur
+            évolution depuis leur envoi.
+          </p>
         </div>
 
         <div className="grid gap-4">
