@@ -1,8 +1,12 @@
 "use client";
+import { useState } from "react";
 
 export default function NewApplicationPage() {
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState("");
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (isSubmitting) return;
 
     const formData = new FormData(e.currentTarget);
 
@@ -25,12 +29,34 @@ export default function NewApplicationPage() {
       return;
     }
 
-    console.log("Formulaire soumis", {
-      companyName: companyName.trim(),
-      positionTitle: positionTitle.trim(),
-      applicationDate,
-      status,
-    });
+    setFeedback("");
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/applications", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          companyName: companyName.trim(),
+          positionTitle: positionTitle.trim(),
+          applicationDate,
+          status,
+        }),
+      });
+
+      if (!response.ok) {
+        setFeedback("Erreur lors de l'enregistrement.");
+        return;
+      }
+
+      setFeedback("Candidature enregistrée avec succès.");
+    } catch (error) {
+      console.error("Erreur de communication avec le serveur :", error);
+      setFeedback("Impossible de communiquer avec le serveur.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -110,6 +136,15 @@ export default function NewApplicationPage() {
           >
             Ajouter la candidature
           </button>
+          {feedback && (
+            <p
+              role="status"
+              aria-live="polite"
+              className="mt-4 text-sm text-slate-300"
+            >
+              {feedback}
+            </p>
+          )}
         </form>
       </section>
     </main>
